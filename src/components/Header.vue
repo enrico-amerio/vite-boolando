@@ -51,6 +51,9 @@ header{
   width: 100%;
   position: fixed;
   z-index: 999;
+  div{
+    width:100px;
+  }
   a{
     text-decoration: none;
     color: white;
