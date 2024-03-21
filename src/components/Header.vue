@@ -58,6 +58,9 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+    div{
+     width: 100px;
+    }
    }
   a{
     text-decoration: none;
