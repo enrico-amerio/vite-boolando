@@ -20,17 +20,21 @@
 </script>
 <template>
   <header>
-  <div>
-    <a v-for="(category, index) in categories" :key="index" :href="category.link" class="top-link">{{ category.name }}</a>
-  </div>
-  <div >
-    <img src="/img/boolean-logo.png" alt="boolean-logo" id="logo">
-  </div>
-  <div class="icon">
-    <a v-for="(icon, index) in icons" :key="index" :href="icon.link">
-      <i :class="icon.class"></i>
-    </a> 
-  </div>
+    <div class="wrapper">
+      <div class="container">
+        <div>
+          <a v-for="(category, index) in categories" :key="index" :href="category.link" class="top-link">{{ category.name }}</a>
+        </div>
+        <div >
+          <img src="/img/boolean-logo.png" alt="boolean-logo" id="logo">
+        </div>
+        <div class="icon">
+          <a v-for="(icon, index) in icons" :key="index" :href="icon.link">
+            <i :class="icon.class"></i>
+          </a> 
+        </div>
+      </div>
+    </div>
  </header>
 </template>
 
@@ -38,12 +42,9 @@
 <style lang="scss" scoped>
 @use '../assets/scss/partials/variables' as *;
 
-header{
+.wrapper{
   height:50px;
   background-color: $orange;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   color:white;
   font-weight: bold;
   margin-bottom: 20px;
@@ -51,9 +52,13 @@ header{
   width: 100%;
   position: fixed;
   z-index: 999;
-  div{
-    width:100px;
-  }
+  display: flex;
+  align-items: center;
+  .container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+   }
   a{
     text-decoration: none;
     color: white;
