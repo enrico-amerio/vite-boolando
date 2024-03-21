@@ -13,7 +13,7 @@
 <style lang="scss" scoped>
   main{
     width: 100%;
-    height: 90vh;
+    height: calc(100vh - 60px);
     display: flex;
     align-items: center;
     justify-content: center;
