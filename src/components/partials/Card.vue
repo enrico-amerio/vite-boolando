@@ -1,14 +1,20 @@
     <script>
       export default {
-        
+        props:{
+          frontImg: String,
+          backImg: String
+        },
+        mounted(){
+          console.log(this.frontImg);
+        }
       }
     </script>
 
 <template>
   <div class="card">
     <div class="card-img-container" >
-      <img src="../../assets/img/1.webp" alt="1" class="img-a">
-      <img src="../../assets/img/1b.webp" alt="1b" class="img-b">
+      <img :src="frontImg" alt="1" class="img-a">
+      <img :src="backImg" alt="1b" class="img-b">
       <span class="hearts">&hearts;</span>
       <span class="sale">-50&percnt;</span>
       <span class="sustain">Sostenibilità</span>
@@ -16,7 +22,7 @@
     <div class="caption">
       <h5>Levi's</h5>
       <h3>TEE UNISEX</h3>
-      <span class="price">14,99 &euro;</span> <span class="full-price">29,99&euro;</span>
+      <span class="price">14,99 &euro;</span><span class="full-price">29,99&euro;</span>
     </div>
   </div>
 </template>
@@ -31,7 +37,6 @@
   max-width: 335px;
   max-height: 485px;
   position: absolute;
-  
 }
   .img-a{
     z-index: 1;
