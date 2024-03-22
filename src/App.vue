@@ -5,7 +5,10 @@ import Footer from './components/Footer.vue';
 import products from './assets/data/db.json';
 export default {
   data(){
-    products
+    return{
+      products
+
+    }
   },
   components:{
     Header,

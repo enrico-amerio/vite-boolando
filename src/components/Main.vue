@@ -22,6 +22,9 @@ export default {
     v-for="(product) in products.products" :key="product.id" :product="product"
       :frontImg="`src/assets/img/${product.frontImage}`" 
       :backImg="`src/assets/img/${product.backImage}`"
+      :fullPrice="product.price"
+      :brand="product.brand"
+      :productName="product.name"
       />
    
   </main>

@@ -2,11 +2,14 @@
       export default {
         props:{
           frontImg: String,
-          backImg: String
+          backImg: String,
+          fullPrice: Number,
+          brand: String,
+          productName: String
         },
-        mounted(){
-          console.log(this.frontImg);
-        }
+        // mounted(){
+        //   console.log(this.frontImg);
+        // }
       }
     </script>
 
@@ -20,9 +23,9 @@
       <span class="sustain">Sostenibilità</span>
     </div>
     <div class="caption">
-      <h5>Levi's</h5>
-      <h3>TEE UNISEX</h3>
-      <span class="price">14,99 &euro;</span><span class="full-price">29,99&euro;</span>
+      <h5>{{brand}}</h5>
+      <h3>{{productName}}</h3>
+      <span class="price">14,99 &euro;</span><span class="full-price">{{fullPrice}}&euro;</span>
     </div>
   </div>
 </template>
