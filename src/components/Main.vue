@@ -10,11 +10,19 @@ export default {
     components:{
       Card
     },
-    // mounted(){
-    //   console.log(products);
-    // }
+    methods: {
+    getDiscountValue(product) {
+      const discountBadge = product.badges.find(badge => badge.type === "discount");
+      return discountBadge ? discountBadge.value : "";
+    },
+    getSustainabilityBadge(product) {
+      const sustainabilityBadge = product.badges.find(badge => badge.type === "tag");
+      return sustainabilityBadge ? sustainabilityBadge.value : "";
+    }
+  },
+};
 
-  }
+  
 </script>
 <template>
   <main>
@@ -25,6 +33,8 @@ export default {
       :fullPrice="product.price"
       :brand="product.brand"
       :productName="product.name"
+      :discountValue="getDiscountValue(product)"
+      :sustainabilityBadge="getSustainabilityBadge(product)"
       />
    
   </main>

@@ -5,7 +5,9 @@
           backImg: String,
           fullPrice: Number,
           brand: String,
-          productName: String
+          productName: String,
+          discountValue: Number,
+          sustainabilityBadge: String
         },
         // mounted(){
         //   console.log(this.frontImg);
@@ -19,8 +21,8 @@
       <img :src="frontImg" alt="1" class="img-a">
       <img :src="backImg" alt="1b" class="img-b">
       <span class="hearts">&hearts;</span>
-      <span class="sale">-50&percnt;</span>
-      <span class="sustain">Sostenibilità</span>
+      <span class="sale" v-if="discountValue">{{discountValue}}</span>
+      <span class="sustain" v-if="sustainabilityBadge">{{sustainabilityBadge}}</span>
     </div>
     <div class="caption">
       <h5>{{brand}}</h5>
