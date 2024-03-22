@@ -18,8 +18,18 @@ export default {
     getSustainabilityBadge(product) {
       const sustainabilityBadge = product.badges.find(badge => badge.type === "tag");
       return sustainabilityBadge ? sustainabilityBadge.value : "";
-    }
-  },
+    },
+    getFinalPrice(product){
+      const price = product.price;
+      const isDiscounted = product.badges.find(badge => badge.type === "discount");
+      if(isDiscounted){
+        const discountValue = isDiscounted.value.replace(/[^a-zA-Z0-9]/g, '');
+        const discountedPrice= price - ((price * discountValue) / 100);
+        return discountedPrice.toFixed(2);
+      }
+      return price.toFixed(2);
+      }
+  }
 };
 
   
@@ -35,6 +45,8 @@ export default {
       :productName="product.name"
       :discountValue="getDiscountValue(product)"
       :sustainabilityBadge="getSustainabilityBadge(product)"
+      :finalPrice=getFinalPrice(product)
+      :isFav= product.isInFavorites
       />
    
   </main>

@@ -6,12 +6,11 @@
           fullPrice: Number,
           brand: String,
           productName: String,
-          discountValue: Number,
-          sustainabilityBadge: String
-        },
-        // mounted(){
-        //   console.log(this.frontImg);
-        // }
+          discountValue: String,
+          sustainabilityBadge: String,
+          finalPrice: String,
+          isFav: Boolean
+        }
       }
     </script>
 
@@ -20,14 +19,14 @@
     <div class="card-img-container" >
       <img :src="frontImg" alt="1" class="img-a">
       <img :src="backImg" alt="1b" class="img-b">
-      <span class="hearts">&hearts;</span>
+      <span class="hearts" :class="{ isFav }" @click="isFav = !isFav">&hearts;</span>
       <span class="sale" v-if="discountValue">{{discountValue}}</span>
       <span class="sustain" v-if="sustainabilityBadge">{{sustainabilityBadge}}</span>
     </div>
     <div class="caption">
       <h5>{{brand}}</h5>
       <h3>{{productName}}</h3>
-      <span class="price">14,99 &euro;</span><span class="full-price">{{fullPrice}}&euro;</span>
+      <span class="price">{{finalPrice}} &euro;</span><span class="full-price" v-if="finalPrice != fullPrice">{{fullPrice}}&euro;</span>
     </div>
   </div>
 </template>
@@ -65,6 +64,7 @@
     background-color: red;
   }
   .hearts{
+    cursor: pointer;
     position:absolute;
     top: 7px;
     right: 0px;
@@ -72,6 +72,9 @@
     background-color: white;
     padding: 2px 10px;
     font-size: 30px;
+    &.isFav{
+      color:red;
+    }
   }
 }
 .caption{
