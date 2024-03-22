@@ -1,21 +1,35 @@
 <script>
+import Card from './partials/Card.vue';
   export default {
-        
+        components:{
+          Card
+        }
   }
 </script>
 <template>
   <main>
-    <div>Main</div>
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
   </main>
 </template>
 
 
 <style lang="scss" scoped>
   main{
-    width: 100%;
-    height: calc(100vh - 60px);
     display: flex;
-    align-items: center;
-    justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 60px;
   }
+//   main{
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   padding-top: 100px;
+  
+// }
 </style>

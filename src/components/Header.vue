@@ -23,13 +23,13 @@
     <div class="wrapper">
       <div class="container">
         <div>
-          <a v-for="(category, index) in categories" :key="index" :href="category.link" class="top-link">{{ category.name }}</a>
+          <a v-for="(category, index) in categories" :key="`m-${index}`" :href="category.link" class="top-link">{{ category.name }}</a>
         </div>
-        <div >
+        <div>
           <img src="/img/boolean-logo.png" alt="boolean-logo" id="logo">
         </div>
         <div class="icon">
-          <a v-for="(icon, index) in icons" :key="index" :href="icon.link">
+          <a v-for="(icon, index) in icons" :key="`i.${index}`" :href="icon.link">
             <i :class="icon.class"></i>
           </a> 
         </div>

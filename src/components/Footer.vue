@@ -46,6 +46,7 @@ footer{
   height: 60px;
   color: white;
   display: flex;
+  z-index: 999;
   .container{
     display: flex;
     justify-content: space-between;
